@@ -19,6 +19,7 @@ const sleep = (ms) => {
 
 ;(async () => {
     let stantPrice = 0;
+    let time = 12;
     const main = async () => {
         const token = `TnjGoDfNrCYXYY18nngjndEVX3yHU1huPstDbm2tHrt`
         const res = await bdo()
@@ -29,8 +30,11 @@ const sleep = (ms) => {
                 await sendMessage(token, `BDO up 1% => ${price}$`)
                 stantPrice = price
             }
+            if(time == 6){
+                await sendMessage(token, `BDO price => ${price}$`)
+            }
             // console.log(stantPrice)
-            await sleep(60000)
+            await sleep(120000)
             main()
         } catch (err) {
             main()

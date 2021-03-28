@@ -7,6 +7,9 @@ const bdo = async () => {
     console.log(res)
     let data = JSON.parse(res)
     console.log(data)
+    if(!data){
+        await bdo()
+    }
     return data
 }
 
