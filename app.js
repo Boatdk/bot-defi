@@ -31,9 +31,11 @@ const sleep = (ms) => {
                 stantPrice = price
             }
             if(time == 6){
+                time = 0
                 await sendMessage(token, `BDO price => ${price}$`)
             }
             // console.log(stantPrice)
+            time++
             await sleep(120000)
             main()
         } catch (err) {
