@@ -6,13 +6,24 @@ const bdo = async () => {
     const res = await curl(`curl ${url}`)
     console.log(res)
     let data = JSON.parse(res)
-    console.log(data)
     if(!data){
         await bdo()
     }
     return data
 }
 
+const sBdo = async () => {
+    const url = `https://api.bdollar.fi/api/bdollar/get-token-info?token=sBDO`
+    const res = await curl(`curl ${url}`)
+    console.log(res)
+    let data = JSON.parse(res)
+    if(!data){
+        await sBdo()
+    }
+    return data
+}
+
 module.exports = {
-    bdo
+    bdo,
+    sBdo
 }
